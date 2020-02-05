@@ -285,7 +285,7 @@
         self.alertContainer.alpha = 1;
         self.alertContainer.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished0) {
-        _visible = YES;
+        self->_visible = YES;
         if ([self.delegate respondsToSelector:@selector(didPresentAlertView:)]) {
             [self.delegate didPresentAlertView:self];
         }
@@ -319,7 +319,7 @@
         self.alertContainer.transform = CGAffineTransformMakeScale(0.7, 0.7);
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
-        _visible = NO;
+        self->_visible = NO;
         if ([self.delegate respondsToSelector:@selector(alertView:didDismissWithButtonIndex:)]) {
             [self.delegate alertView:self didDismissWithButtonIndex:buttonIndex];
         }
